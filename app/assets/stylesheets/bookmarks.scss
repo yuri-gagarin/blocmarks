@@ -1,3 +1,27 @@
 // Place all the styles related to the bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bookmark-window {
+  width: 22%;
+  vertical-align: top;
+  position: relative;
+  min-width: 175px;
+  min-height: 175px;
+  max-height: 250px;
+  border: 1px solid grey;
+  margin: 10px 1%;
+  padding: 5px 5px 5px 5px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookmark-window:hover {
+  box-shadow: 3px 5px 2px grey;
+  background-color: none;
+}
+.more-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

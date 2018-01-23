@@ -1,6 +1,10 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @bookmarks = Bookmark.where(user_id: current_user.id)
+  end
+
   def new
     @bookmark = Bookmark.new
     @user = current_user
@@ -22,8 +26,10 @@ class BookmarksController < ApplicationController
     if @bookmark.save!
       puts @bookmark
       puts "bookmark was saved"
+      redirect_to @bookmark
     else
       puts "error"
+      render :new
     end
   end
 
