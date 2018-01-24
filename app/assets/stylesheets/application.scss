@@ -15,3 +15,30 @@
  @import "bootstrap";
  @import "welcome.scss";
  @import "bookmarks.scss";
+
+ body {
+   background-color: #c7e8f9;
+ }
+
+.bg-company-red {
+  background-color: #5eb1db;
+}
+.dropdown {
+  margin-right: 20px;
+}
+.dropdown-button {
+  background-color: #92d7fc;
+}
+.dropdown-button:hover {
+  background-color: #a2cee5;
+}
+.dropdown-button:focus {
+  background-color: #a2cee5 !important;
+}
+
+.nav-item:hover {
+  color: white !important;
+}
+.cointainer-fluid {
+  background-color: #c7e8f9;
+}
