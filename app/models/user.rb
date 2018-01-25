@@ -6,5 +6,5 @@ class User < ApplicationRecord
   before_save { self.role ||= :member }
   enum role: [:member, :admin]
   has_many :bookmarks, dependent: :destroy
-  
+  has_many :topics
 end

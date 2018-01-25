@@ -29,9 +29,10 @@
 .welcome-description {
   font-size: 30px;
   overflow: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
   letter-spacing: .25em;
   animation: type 4s steps(100, end);
+  animation-delay: 2s;
 }
 
 @keyframes type {
