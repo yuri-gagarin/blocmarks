@@ -1,42 +1,17 @@
 <div class="container-fluid topic-container">
+  <% @topics.each do |topic| %>
   <div class="topic-window">
-    <h3><%="topic" %></h3>
-    <p><%="bookmark.description" %></p>
+    <h3><%= topic.title %></h3>
+    <p>Created By: <%= User.where(:id => topic.user_id).pluck(:email).join %></p>
     <p><%="bookmark.topic_id" %></p>
     <div class="more-btn">
-      <button class="btn btn-link">Show More!</button>
+      <%= link_to "Explore", topic_path(topic.id) %>
     </div>
-  </div>
-  <div class="topic-window">
-    <h3><%="topic" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="more-btn">
-      <button class="btn btn-link">Show More!</button>
+    <% if (topic.user_id == current_user.id) || (current_user.role == "admin") %>
+    <div class="delete-btn">
+      <%= button_to "DELETE", topic, method: :delete, class: "topic-delete" %>
     </div>
+    <% end %>
   </div>
-  <div class="topic-window">
-    <h3><%="topic" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="topic-window">
-    <h3><%="topic" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="topic-window">
-    <h3><%="topic" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
+  <% end %>
 </div>

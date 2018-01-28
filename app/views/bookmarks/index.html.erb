@@ -8,6 +8,10 @@
     <div class="more-btn">
       <button class="btn btn-link">Show More!</button>
     </div>
+    <div class="delete-bookmark">
+      <%= link_to "DELETE", topic_bookmark_path(bookmark.topic_id, bookmark), method: :delete %>
+    </div>
+
   </div>
   <% end %>
 </div>

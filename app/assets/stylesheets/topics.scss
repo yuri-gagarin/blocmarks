@@ -24,3 +24,14 @@
   box-shadow: 3px 5px 2px grey;
   background-color: #dbeff9;
 }
+
+.topic-delete {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  background-color: red;
+}
+
+.topic-delete:hover {
+  background-color: pink;
+}

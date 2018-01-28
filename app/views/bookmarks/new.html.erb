@@ -4,7 +4,7 @@
   </div>
   <div class="row">
     <div class="col-md-8 offset-md-2">
-    <%= form_for(@bookmark) do |f| %>
+    <%= form_for([@topic, @bookmark]) do |f| %>
       <div class="form-group">
         <%= f.label :url %><br />
         <div>

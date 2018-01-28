@@ -1,3 +1,11 @@
+<% if !@topic.errors.empty? %>
+  <% @topic.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <p><%= message %></p>
+  </div>
+  <% end %>
+<% end %>
 <div class="container-fluid topic-container">
   <div class="row">
     <h2 class="col-md-8 offset-md-2">New Topic</h2>
@@ -15,6 +23,6 @@
         <%= f.submit "Create Topic", class: "btn btn-success" %>
       </div>
     <% end %>
-  </div>
+    </div>
   </div>
 </div>

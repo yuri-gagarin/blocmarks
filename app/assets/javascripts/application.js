@@ -14,6 +14,14 @@
 //= require turbolinks
 //= require_tree .
 
-//= require jquery3
+//= require jquery
+//= require jquery_ujs
 //= require popper
 //= require bootstrap
+
+
+//auto dismissable errors for topics
+//need to figure out jquery error
+$(".alert").delay(10000).slideUp(200, function() {
+    $(this).alert('close');
+});

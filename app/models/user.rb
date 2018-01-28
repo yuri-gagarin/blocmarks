@@ -7,4 +7,8 @@ class User < ApplicationRecord
   enum role: [:member, :admin]
   has_many :bookmarks, dependent: :destroy
   has_many :topics
+
+  def email
+    "email"
+  end
 end

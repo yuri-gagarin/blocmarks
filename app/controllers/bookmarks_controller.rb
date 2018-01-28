@@ -6,9 +6,9 @@ class BookmarksController < ApplicationController
   end
 
   def new
+    @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new
     @user = current_user
-    puts "current user id is " + @user.id.to_s
   end
 
   def show
@@ -16,17 +16,17 @@ class BookmarksController < ApplicationController
   end
 
   def edit
+    @bookmark = Bookmark.find(params[:id])
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.topic_id = 1
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = @topic.bookmarks.create(bookmark_params)
     @bookmark.user_id = current_user.id
 
     if @bookmark.save!
-      puts @bookmark
-      puts "bookmark was saved"
-      redirect_to @bookmark
+      flash[:notice] = "Bookmark Was Saved"
+      redirect_to @topic
     else
       puts "error"
       render :new
@@ -34,9 +34,28 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.assign_attributes(bookmark_params)
+
+    if @bookmark.save!
+      flash[:notice] = "Bookmark Was Updated"
+      redirect_to @topic
+    else
+      flash.now[:error] = "Server Error. Bookmark not Updated"
+      render :edit
+    end
   end
 
   def destroy
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.destroy!
+      flash[:notice] = "Bookmark was deleted"
+      redirect_to action: :index
+    else
+      flash.now[:error] = "Error in deleting the bookmark"
+      render :index
+    end
   end
 
   private
