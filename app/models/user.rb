@@ -8,7 +8,4 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :topics
 
-  def email
-    "email"
-  end
 end
