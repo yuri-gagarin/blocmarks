@@ -1,14 +1,20 @@
-<div class="container-fluid topic-page">
+<div class="container-fluid topic-page-container">
   <div class="topic-title">
-    <h3><%= @topic.title %></h3>
+    <h3>Category:  <span><%= @topic.title.upcase %></span> </h3>
   </div>
-  <% @topic_bookmarks.each do |bookmark| %>
-    <div class="topic-bookmarks">
-      <p><%= bookmark.url %></p>
-      <p><%= bookmark.description %></p>
-    </div>
-  <% end %>
-  <div class="bookmark-create">
-    <%= button_to "New Bookmark", {action: :new, controller: :bookmarks, topic_id: @topic.id}, method: :get %>
+  <div class="topic-control-btns">
+    <%= link_to "New Bookmark", {action: :new, controller: :bookmarks, topic_id: @topic.id}, method: :get, class: "bookmark-create-btn" %>
+    <% if (@topic.user_id == current_user.id) || (current_user.role == "admin") %>
+      <%= link_to "Delete Topic", {action: :destroy, controller: :topics, id: @topic.id}, method: :delete, class: "topic-destroy-btn" %>
+      <%= link_to "Edit Topic", {action: :edit, controller: :topics, id: @topic.id}, method: :get, class: "topic-edit-btn" %>
+    <% end  %>
+  </div>
+  <div class="container-fluid bookmarks-container">
+    <% @topic_bookmarks.each do |bookmark| %>
+      <div class="bookmark-window">
+        <p class="bookmark-url"><%= link_to bookmark.url, "http://#{bookmark.url}" %></p>
+        <p class="bookmark-description"><%= bookmark.description %></p>
+      </div>
+    <% end %>
   </div>
 </div>

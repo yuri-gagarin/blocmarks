@@ -18,28 +18,32 @@
  @import "topics.scss";
 
  body {
-   background-color: #c7e8f9;
+   background-color: #62B6CB;
  }
 
 .bg-company-red {
-  background-color: #5eb1db;
+  background-color: #1B4965;
 }
 .dropdown {
   margin-right: 20px;
 }
 .dropdown-button {
-  background-color: #92d7fc;
-}
-.dropdown-button:hover {
-  background-color: #a2cee5;
-}
-.dropdown-button:focus {
-  background-color: #a2cee5 !important;
+  background-color: #62B6CB;
+  &:hover {
+    background-color: #5FA8D3;
+  }
+  &:focus {
+    background-color: #5FA8D3 !important;
+  }
 }
 
-.nav-item:hover {
+.nav-item {
   color: white !important;
+  &:hover {
+    color: yellow !important;
+  }
 }
+
 .cointainer-fluid {
   background-color: #c7e8f9;
 }

@@ -38,11 +38,11 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
 
     if @topic.save
-      flash[:notice] = "Topic successfully created"
+      flash[:notice] = "Topic successfully updated"
       redirect_to(topics_path)
     else
       if @topic.errors
-        flash.now[:alert] = "There was an error creating a topic"
+        flash.now[:alert] = "There was an error updating a topic"
         render(:new)
       end
     end

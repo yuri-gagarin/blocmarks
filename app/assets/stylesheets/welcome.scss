@@ -13,19 +13,18 @@
 .welcome-title {
   background-color: #c7e8f9;
   display: inline-block;
-
+  h3 {
+    padding: 10px;
+    font-size: 70px;
+    font-family: courier;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: .25em;
+    animation: type 4s steps(100, end);
+  }
 }
-.welcome-title h3 {
-  padding: 10px;
-  font-size: 70px;
-  font-family: courier;
-  color: white;
-  white-space: nowrap;
-  overflow: hidden;
-  letter-spacing: .25em;
-  animation: type 4s steps(100, end);
 
-}
 .welcome-description {
   font-size: 30px;
   overflow: hidden;

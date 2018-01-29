@@ -1,12 +1,12 @@
 
-<div class="container-fluid">
+<div class="container-fluid bookmarks-index-container">
   <% @bookmarks.each do |bookmark| %>
   <div class="bookmark-window">
-    <h3><%=bookmark.url %></h3>
+    <h3><%= link_to bookmark.url, "http://#{bookmark.url}" %></h3>
     <p><%=bookmark.description %></p>
     <p><%=bookmark.topic_id %></p>
     <div class="more-btn">
-      <button class="btn btn-link">Show More!</button>
+      <%= link_to "Show More!", topic_bookmark_path(bookmark.topic_id, bookmark) %>
     </div>
     <div class="delete-bookmark">
       <%= link_to "DELETE", topic_bookmark_path(bookmark.topic_id, bookmark), method: :delete %>
