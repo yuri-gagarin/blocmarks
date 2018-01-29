@@ -4,7 +4,7 @@
   <div class="bookmark-window">
     <h3><%= link_to bookmark.url, "http://#{bookmark.url}" %></h3>
     <p><%=bookmark.description %></p>
-    <p>Created By:<%=bookmark.user_name %></p>
+    <p>Created By:<%= User.where(id: bookmark.user_id).pluck(:user_name)[0] %></p>
     <div class="more-btn">
       <%= link_to "Show More!", topic_bookmark_path(bookmark.topic_id, bookmark) %>
     </div>

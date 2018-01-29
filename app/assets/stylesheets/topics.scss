@@ -6,6 +6,7 @@
 .topic-container {
   min-height: 720px;
   margin-top: 50px;
+  position: relative;
 }
 .topic-window {
   width: 22%;
@@ -16,9 +17,8 @@
   max-height: 250px;
   background-color:  #BEE9E8;
   border: 1px solid grey;
-  margin: 10px 1%;
-  padding: 5px 5px 5px 5px;
   display: inline-block;
+  margin: 10px 1%;
   overflow: hidden;
   text-overflow: ellipsis;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -27,15 +27,28 @@
     background-color: #dbeff9;
   }
 }
-
-.topic-delete {
+.topic-control-section {
+  border-top: 1px solid white;
+  width: 100%;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  background-color: red;
-  &:hover {
-    background-color: pink;
+  left: 0px;
+  bottom: 0px;
+  background-color: white;
+}
+.topic-more-btn {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 10px 5px 5px 10px;
+  a {
+    text-decoration: none;
   }
+}
+.delete-btn {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin: 10px 5px 5px 10px;
 }
 
 ///topics_controller#show
