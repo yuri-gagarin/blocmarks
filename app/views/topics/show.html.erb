@@ -14,6 +14,12 @@
       <div class="bookmark-window">
         <p class="bookmark-url"><%= link_to bookmark.url, "http://#{bookmark.url}" %></p>
         <p class="bookmark-description"><%= bookmark.description %></p>
+        <div class="bookmark-likes">
+          <div class="total-likes">
+            <p><%= bookmark.likes.to_i %></p>
+          </div>
+          <%= button_to "Like", { controller: "likes", action: "create"}, params: { user_id: current_user.id, bookmark_id: bookmark.id, topic_id: @topic }, class: "like-btn", method: :post  %>
+        </div>
       </div>
     <% end %>
   </div>

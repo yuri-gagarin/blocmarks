@@ -73,6 +73,37 @@
     color: white;
   }
 }
+.bookmark-window {
+  width: 22%;
+  vertical-align: top;
+  position: relative;
+  min-width: 175px;
+  min-height: 175px;
+  background-color: #BEE9E8;
+  border: 1px solid grey;
+  margin: 10px 1%;
+  display: inline-block;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+  a {
+    color: #5054ce;
+  }
+  &:hover {
+    box-shadow: 0 8px 16px 0 grey, 0 12px 30px 0 grey;
+    background-color: #dbeff9;
+  }
+  h3 {
+    margin: 10px 5px 0px 5px;
+    text-align: center;
+  }
+  p {
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 .bookmark-url {
   font-size: 30px;
   text-align: center;

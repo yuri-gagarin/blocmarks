@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   before_save { self.role ||= :member }
   has_many :bookmarks, dependent: :destroy
+  has_many :likes
   has_many :topics
 
 end
