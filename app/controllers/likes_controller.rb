@@ -1,9 +1,5 @@
 class LikesController < ApplicationController
-
-  def new
-    @topic_id = params[:topic_id]
-    redirect_to topic_path(id: @topic_id)
-  end
+  before_action :authenticate_user!
 
   def create
     @like = Like.new(like_params)

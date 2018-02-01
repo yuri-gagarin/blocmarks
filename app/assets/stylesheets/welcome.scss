@@ -34,7 +34,7 @@
   animation-delay: 2s;
 }
 
-.show-more-btn {
+.index-like-btn {
   width: 100%;
   position: absolute;
   border-top: 1px solid white;
@@ -45,6 +45,15 @@
   margin-left: 0px;
   button {
     text-decoration: none !important;
+  }
+}
+
+.bookmark-window {
+  h3 {
+    text-align: center;
+  }
+  p {
+    margin-left: 10px;
   }
 }
 

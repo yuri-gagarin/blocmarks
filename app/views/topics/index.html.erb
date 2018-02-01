@@ -3,7 +3,6 @@
   <div class="topic-window">
     <h3><%= topic.title %></h3>
     <p>Created By: <%= User.where(:id => topic.user_id).pluck(:user_name).join %></p>
-    <p><%="bookmark.topic_id" %></p>
     <div class="topic-control-section">
       <div class="topic-more-btn">
         <%= link_to "Explore", topic_path(topic.id) %>

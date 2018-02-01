@@ -5,68 +5,13 @@
   <div class="welcome-description"><p>Create, Share, Read and Discover What Others Are Posting!</p></div>
 </div>
 <div class="container-fluid">
+  <% @bookmarks.each do |bookmark| %>
   <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
+    <h3><%= bookmark.url %></h3>
+    <p><%= bookmark.description %></p>
+    <div class="index-like-btn">
+      <button class="btn btn-link">Like!</button>
+      <div class="bookmark-likes"><%=bookmark.likes.count%></div>
     </div>
   </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-  <div class="bookmark-window">
-    <h3><%="bookmark.url" %></h3>
-    <p><%="bookmark.description" %></p>
-    <p><%="bookmark.topic_id" %></p>
-    <div class="show-more-btn">
-      <button class="btn btn-link">Show More!</button>
-    </div>
-  </div>
-</div>
+  <% end %>
