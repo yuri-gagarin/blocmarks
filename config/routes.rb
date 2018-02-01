@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "/bookmarks", to: "bookmarks#index", as: "user_bookmarks"
   get "/likes/new", to: "likes#new", as: "new_like"
   post "/likes", to: "likes#create", as: "create_like"
+  delete "/likes/:id", to: "likes#destroy", as: "delete_like"
 end

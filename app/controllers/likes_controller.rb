@@ -12,13 +12,21 @@ class LikesController < ApplicationController
       flash[:notice] = "Bookmark liked"
       redirect_to topic_path(id: @topic_id)
     else
-      flash.now[:alert] = "Error in saving like"
+      flash[:alert] = "Error in saving like"
       redirect_to topic_path(id: @topic_id)
     end
   end
 
   def destroy
-
+    @like = Like.find(params[:id])
+    @topic_id = params[:topic_id]
+    if @like.destroy!
+      flash[:notice] = "BOOOO! Unliked!"
+      redirect_to topic_path(id: @topic_id)
+    else
+      flash[:alert] = "Couldn't reverse like"
+      redirect_to topic_path(id: @topic_id)
+    end
   end
 
   private

@@ -94,26 +94,20 @@
     box-shadow: 0 8px 16px 0 grey, 0 12px 30px 0 grey;
     background-color: #dbeff9;
   }
-  h3 {
-    margin: 10px 5px 0px 5px;
+  .bookmark-url {
+    font-size: 30px;
     text-align: center;
+    text-overflow: ellipsis;
+    margin-top: 10px;
   }
-  p {
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+  .bookmark-description {
+    font-size: 20px;
+    text-align: center;
+    text-overflow: ellipsis;
   }
 }
-.bookmark-url {
-  font-size: 30px;
-  text-align: center;
-  text-overflow: ellipsis;
-}
-.bookmark-description {
-  font-size: 20px;
-  text-align: center;
-  text-overflow: ellipsis;
-}
+
+
 .topic-control-btns {
   margin-top: 20px;
   display: inline-block;
@@ -130,7 +124,22 @@
     }
   }
 }
+
 .bookmarks-container {
   clear: both;
   display: block;
+}
+
+.bookmark-likes {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  .total-likes {
+    float: right;
+    margin-right: 5px;
+  }
+  .like-button {
+    float: right;
+    margin-right: 5px;
+  }
 }

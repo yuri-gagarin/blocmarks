@@ -14,11 +14,19 @@
       <div class="bookmark-window">
         <p class="bookmark-url"><%= link_to bookmark.url, "http://#{bookmark.url}" %></p>
         <p class="bookmark-description"><%= bookmark.description %></p>
+        <p><%= bookmark.likes.where(:user_id => current_user.id ).pluck(:id)[0] %></p>
         <div class="bookmark-likes">
           <div class="total-likes">
-            <p><%= bookmark.likes.to_i %></p>
+            <p><%= bookmark.likes.count %></p>
           </div>
-          <%= button_to "Like", { controller: "likes", action: "create"}, params: { user_id: current_user.id, bookmark_id: bookmark.id, topic_id: @topic }, class: "like-btn", method: :post  %>
+          <div class="like-button">
+          <% if !bookmark.likes.exists?(user_id: current_user.id) %>
+            <%= button_to "Like", { controller: "likes", action: "create"}, params: { user_id: current_user.id, bookmark_id: bookmark.id, topic_id: @topic }, class: "like-btn", method: :post  %>
+          <% else %>
+            <% like_id = bookmark.likes.where(:user_id => current_user.id ).pluck(:id)[0] %>
+            <%= button_to "Unlike", delete_like_path(like_id), params: {topic_id: @topic}, class: "unlike-btn", method: :delete %>
+          <% end %>
+          </div>
         </div>
       </div>
     <% end %>
